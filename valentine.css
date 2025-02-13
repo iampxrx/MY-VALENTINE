@@ -1,0 +1,77 @@
+body {
+  text-align: center;
+  background-color: #ffe4e1;
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  overflow: hidden; /* ป้องกันการเลื่อนออกนอกจอ */
+}
+
+.container {
+  text-align: center;
+}
+
+.turntable {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 300px;
+  height: 300px;
+  margin: 0 auto; /* จัดให้อยู่ตรงกลาง */
+}
+
+.turntable img {
+  width: 100%;
+  display: block;
+  position: absolute;
+}
+
+.vinyl {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 180px;
+  height: 180px;
+  background-image: url('vinyl.jpg'); /* ใช้ไฟล์แผ่นเสียง */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transform-origin: center center;
+  animation: none;
+  z-index: 2;
+}
+
+@keyframes spin {
+  from { transform: translate(-50%, -50%) rotate(0deg); }
+  to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+.playing {
+  animation: spin 5s linear infinite;
+}
+
+.controls {
+  margin-top: 20px;
+}
+
+button {
+  padding: 10px 20px;
+  border: none;
+  background-color: #ff4d6d;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  margin: 5px;
+}
+
+button:hover {
+  background-color: #e63950;
+}
